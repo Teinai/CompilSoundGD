@@ -1,0 +1,87 @@
+package calculator;
+
+import java.util.TreeMap;
+import java.util.Map;
+
+parser code {:
+    
+    public void report_error(String message, Object info) {
+        StringBuffer m = new StringBuffer("Error");
+		m.append (info.toString());
+        m.append(" : "+message);
+        System.err.println(m.toString());
+    }
+   
+    public void report_fatal_error(String message, Object info) {
+        report_error(message, info);
+        System.exit(1);
+    }
+
+	private Map<String, Integer> values = new TreeMap<String, Integer> ();
+
+	public void setValue (String name, int value) {
+		values.put(name, new Integer (value));
+	}
+	
+	public int getValue (String name) {
+		int value = 0;
+		if (values.containsKey(name))
+			value = values.get(name).intValue();
+		return value;
+	}
+
+:}
+
+terminal Float DURATION;
+terminal Integer BPM;
+terminal TERM, BEGIN, END;
+terminal COMMA;
+terminal PLAY, ID;
+terminal Integer DO, DOD, REB, RE, RED, MIB, MI, FA, FAD, SOLB, SOL, SOLD, LAB, LA, LAD, SIB, SI, SILENCE;
+
+nonterminal Play, Plays, Playable, Score, Sequence, Notes, Note, Hight;
+
+//Instructions	::= 
+
+Play		::=	PLAY Plays
+			;
+
+Plays		::=
+		| 	Plays Playable
+		;
+
+Playable	::=	ID
+			|	Sequence
+			;
+			
+Score 		::=	Sequence BPM
+			;
+Sequence	::= 	BEGIN Notes END
+			;
+		
+Notes		::=	Note
+			| 	Notes COMMA Note
+			;
+		
+Note		::=	Hight DURATION 
+			;
+		
+Hight 		::=	DO
+			|	DOD
+			|	REB
+			|	RE
+			|	RED
+			|	MIB
+			|	MI
+			|	FA
+			|	FAD
+			|	SOLB
+			|	SOL
+			|	SOLD
+			|	LAB
+			|	LA
+			|	LAD
+			|	SIB
+			|	SI
+			|	SILENCE
+			;
