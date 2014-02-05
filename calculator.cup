@@ -32,14 +32,14 @@ parser code {:
 
 :}
 
-terminal Float DURATION;
-terminal Integer BPM;
 terminal BEGIN, END, EOLN;
 terminal COMMA;
 terminal PLAY, ID;
 terminal DO, DOD, REB, RE, RED, MIB, MI, FA, FAD, SOLB, SOL, SOLD, LAB, LA, LAD, SIB, SI, SILENCE;
+terminal Integer INTEGER;
+terminal Float FLOAT;
 
-nonterminal Play, Plays, Playable, Sequence, Notes, Note, Hight;
+nonterminal Play, Plays, Playable, Sequence, Notes, Note, Hight, Duration;
 
 Play		::=	PLAY Plays					{: SoundFactory.getScore().play(); :}
 			;
@@ -51,16 +51,22 @@ Plays		::=
 Playable	::=	Sequence:s					{: RESULT = SoundFactory.getSequence(); :}
 			;
 			
-Sequence	::=	BPM:bpm BEGIN Notes:n END	{: RESULT = SoundFactory.createSequence(bpm, (ArrayList<Tone>) n); :}										
+Sequence	::=	INTEGER:bpm BEGIN Notes:n END	{: RESULT = SoundFactory.createSequence(bpm, (ArrayList<Tone>) n); :}										
 			;
 
-Notes		::=	Note:n						{: ArrayList<Tone> l = SoundFactory.createToneList();
-											   l.add((Tone) n);
-											   RESULT = l; :}
-			| 	Notes COMMA Note:n			{: RESULT = SoundFactory.getToneList().add((Tone) n); :}
+Notes		::=	Note:n						{: SoundFactory.createToneList().add((Tone) n);											   
+											   System.out.println("Note added");
+											:}
+			| 	Notes COMMA Note:n			{: SoundFactory.getToneList().add((Tone) n); 
+											   RESULT = SoundFactory.getToneList(); 
+											:}
 			;
 		
-Note		::=	Hight:h DURATION:d			{: RESULT = SoundFactory.createTone(h,d); :}
+Note		::=	Hight:h Duration:d			{: RESULT = SoundFactory.createTone(h,(Float) d); :}
+			;
+			
+Duration	::= FLOAT:f						{: RESULT = new Float(f); :}
+			| INTEGER:i						{: RESULT = new Integer(i); :}
 			;
 		
 Hight 		::=	DO							{: RESULT = SoundFactory.Tones.DO; :}

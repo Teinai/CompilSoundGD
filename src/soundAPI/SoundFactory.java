@@ -88,15 +88,10 @@ public class SoundFactory {
     	for(Tone t : tones) result.add(t);
     	return result;
     }
-    
-    public Tone createTone(Tones hight, float duration) {
+	
+    public static Tone createTone(Tones hight, float duration) {
     	return new Tone(hight, duration);
     }
-    
-    public static Tone createTone(Object hight, float duration) {
-    	return new Tone((Tones) hight, duration);
-    }
-
 
 	public static void setBPM(int bpm) {
         DEFAULT_MSECS = 60000/bpm;
