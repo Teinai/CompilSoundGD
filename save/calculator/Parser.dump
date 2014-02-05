@@ -4,11 +4,11 @@
 
 ===== Terminals =====
 [0]EOF [1]error [2]DURATION [3]BPM [4]BEGIN 
-[5]END [6]EOLN [7]COMMA [8]PLAY [9]ID 
-[10]DO [11]DOD [12]REB [13]RE [14]RED 
-[15]MIB [16]MI [17]FA [18]FAD [19]SOLB 
-[20]SOL [21]SOLD [22]LAB [23]LA [24]LAD 
-[25]SIB [26]SI [27]SILENCE 
+[5]END [6]COMMA [7]PLAY [8]ID [9]DO 
+[10]DOD [11]REB [12]RE [13]RED [14]MIB 
+[15]MI [16]FA [17]FAD [18]SOLB [19]SOL 
+[20]SOLD [21]LAB [22]LA [23]LAD [24]SIB 
+[25]SI [26]SILENCE 
 
 ===== Non terminals =====
 [0]Play [1]Plays [2]Playable [3]Sequence [4]Notes 
@@ -314,7 +314,7 @@ lalr_state [33]: {
 -------------------
 -------- ACTION_TABLE --------
 From state #0
- [term 8:SHIFT(to state 1)]
+ [term 7:SHIFT(to state 1)]
 From state #1
  [term 0:REDUCE(with prod 2)] [term 3:REDUCE(with prod 2)]
 From state #2
@@ -330,15 +330,15 @@ From state #6
 From state #7
  [term 0:REDUCE(with prod 3)] [term 3:REDUCE(with prod 3)]
 From state #8
- [term 10:SHIFT(to state 20)] [term 11:SHIFT(to state 10)]
- [term 12:SHIFT(to state 18)] [term 13:SHIFT(to state 17)]
- [term 14:SHIFT(to state 16)] [term 15:SHIFT(to state 9)]
- [term 16:SHIFT(to state 24)] [term 17:SHIFT(to state 19)]
- [term 18:SHIFT(to state 15)] [term 19:SHIFT(to state 23)]
- [term 20:SHIFT(to state 12)] [term 21:SHIFT(to state 22)]
- [term 22:SHIFT(to state 28)] [term 23:SHIFT(to state 21)]
- [term 24:SHIFT(to state 26)] [term 25:SHIFT(to state 13)]
- [term 26:SHIFT(to state 25)] [term 27:SHIFT(to state 11)]
+ [term 9:SHIFT(to state 20)] [term 10:SHIFT(to state 10)]
+ [term 11:SHIFT(to state 18)] [term 12:SHIFT(to state 17)]
+ [term 13:SHIFT(to state 16)] [term 14:SHIFT(to state 9)]
+ [term 15:SHIFT(to state 24)] [term 16:SHIFT(to state 19)]
+ [term 17:SHIFT(to state 15)] [term 18:SHIFT(to state 23)]
+ [term 19:SHIFT(to state 12)] [term 20:SHIFT(to state 22)]
+ [term 21:SHIFT(to state 28)] [term 22:SHIFT(to state 21)]
+ [term 23:SHIFT(to state 26)] [term 24:SHIFT(to state 13)]
+ [term 25:SHIFT(to state 25)] [term 26:SHIFT(to state 11)]
 From state #9
  [term 2:REDUCE(with prod 14)]
 From state #10
@@ -350,7 +350,7 @@ From state #12
 From state #13
  [term 2:REDUCE(with prod 24)]
 From state #14
- [term 5:REDUCE(with prod 6)] [term 7:REDUCE(with prod 6)]
+ [term 5:REDUCE(with prod 6)] [term 6:REDUCE(with prod 6)]
 From state #15
  [term 2:REDUCE(with prod 17)]
 From state #16
@@ -376,27 +376,27 @@ From state #25
 From state #26
  [term 2:REDUCE(with prod 23)]
 From state #27
- [term 5:SHIFT(to state 32)] [term 7:SHIFT(to state 31)]
+ [term 5:SHIFT(to state 32)] [term 6:SHIFT(to state 31)]
 From state #28
  [term 2:REDUCE(with prod 21)]
 From state #29
  [term 2:SHIFT(to state 30)]
 From state #30
- [term 5:REDUCE(with prod 8)] [term 7:REDUCE(with prod 8)]
+ [term 5:REDUCE(with prod 8)] [term 6:REDUCE(with prod 8)]
 From state #31
- [term 10:SHIFT(to state 20)] [term 11:SHIFT(to state 10)]
- [term 12:SHIFT(to state 18)] [term 13:SHIFT(to state 17)]
- [term 14:SHIFT(to state 16)] [term 15:SHIFT(to state 9)]
- [term 16:SHIFT(to state 24)] [term 17:SHIFT(to state 19)]
- [term 18:SHIFT(to state 15)] [term 19:SHIFT(to state 23)]
- [term 20:SHIFT(to state 12)] [term 21:SHIFT(to state 22)]
- [term 22:SHIFT(to state 28)] [term 23:SHIFT(to state 21)]
- [term 24:SHIFT(to state 26)] [term 25:SHIFT(to state 13)]
- [term 26:SHIFT(to state 25)] [term 27:SHIFT(to state 11)]
+ [term 9:SHIFT(to state 20)] [term 10:SHIFT(to state 10)]
+ [term 11:SHIFT(to state 18)] [term 12:SHIFT(to state 17)]
+ [term 13:SHIFT(to state 16)] [term 14:SHIFT(to state 9)]
+ [term 15:SHIFT(to state 24)] [term 16:SHIFT(to state 19)]
+ [term 17:SHIFT(to state 15)] [term 18:SHIFT(to state 23)]
+ [term 19:SHIFT(to state 12)] [term 20:SHIFT(to state 22)]
+ [term 21:SHIFT(to state 28)] [term 22:SHIFT(to state 21)]
+ [term 23:SHIFT(to state 26)] [term 24:SHIFT(to state 13)]
+ [term 25:SHIFT(to state 25)] [term 26:SHIFT(to state 11)]
 From state #32
  [term 0:REDUCE(with prod 5)] [term 3:REDUCE(with prod 5)]
 From state #33
- [term 5:REDUCE(with prod 7)] [term 7:REDUCE(with prod 7)]
+ [term 5:REDUCE(with prod 7)] [term 6:REDUCE(with prod 7)]
 ------------------------------
 -------- REDUCE_TABLE --------
 From state #0

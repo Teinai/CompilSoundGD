@@ -26,14 +26,14 @@ class Lexer implements java_cup.runtime.Scanner {
    * Translates characters to character classes
    */
   private static final char [] ZZ_CMAP = {
-     0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  0,  1,  1,  0,  0, 
      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 
-     2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 21,  0,  9,  0, 
-     3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  0,  0,  0,  0,  0,  0, 
-     0, 15,  4, 18, 10,  5, 14,  6,  0,  7,  0,  0, 17, 13,  8, 11, 
-    19,  0, 12, 16,  0,  0,  0,  0,  0, 20,  0,  0,  0,  0,  0,  0, 
      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 
-     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  0,  0,  0
+     1,  0,  0,  0,  0,  0,  0,  0,  1,  1,  0,  1,  0,  0,  0,  0, 
+     2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  0,  0,  0,  0,  0,  0, 
+     0, 11,  7, 15,  3,  6, 10, 18,  0,  9,  0,  0, 13,  8, 14,  4, 
+    16,  0,  5, 12,  0,  0,  0,  0,  0, 17,  0,  0,  0,  0,  0,  0, 
+     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 
+     0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0
   };
 
   /** 
@@ -42,14 +42,14 @@ class Lexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\1\3\11\1\1\4\4\0\1\5"+
-    "\1\6\1\7\1\10\1\11\1\0\1\12\2\0\1\3"+
-    "\1\0\1\13\1\14\1\15\1\16\1\17\1\20\1\21"+
-    "\1\0\1\22\1\23\1\24\4\0\1\25\1\26\1\27"+
-    "\1\0\1\30\3\0\1\31\1\32";
+    "\1\0\1\1\2\2\2\1\2\2\6\1\1\3\1\4"+
+    "\1\5\2\0\1\6\1\7\1\0\1\10\1\11\2\0"+
+    "\1\12\1\13\1\14\1\15\1\0\1\16\1\17\1\20"+
+    "\1\21\1\0\1\22\1\23\3\0\1\24\1\25\2\0"+
+    "\1\26\1\27\1\0\1\30\1\0\1\31";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[54];
+    int [] result = new int[51];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -74,16 +74,16 @@ class Lexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\26\0\26\0\54\0\102\0\130\0\156\0\204"+
-    "\0\232\0\260\0\306\0\334\0\362\0\26\0\u0108\0\u011e"+
-    "\0\u0134\0\u014a\0\u0160\0\u0176\0\u018c\0\u01a2\0\u01b8\0\u01ce"+
-    "\0\u01e4\0\u01fa\0\u0210\0\u011e\0\u0226\0\26\0\26\0\26"+
-    "\0\26\0\26\0\26\0\26\0\u023c\0\u0252\0\26\0\26"+
-    "\0\u0268\0\u027e\0\u0294\0\u02aa\0\26\0\26\0\26\0\u02c0"+
-    "\0\26\0\u02d6\0\u02ec\0\u0302\0\26\0\26";
+    "\0\0\0\23\0\23\0\46\0\71\0\114\0\137\0\162"+
+    "\0\205\0\230\0\253\0\276\0\321\0\344\0\46\0\367"+
+    "\0\u010a\0\u011d\0\u0130\0\u0143\0\u0156\0\u0169\0\u017c\0\u018f"+
+    "\0\u01a2\0\u01b5\0\23\0\23\0\23\0\23\0\u01c8\0\23"+
+    "\0\23\0\u01db\0\23\0\u01ee\0\23\0\23\0\u0201\0\u0214"+
+    "\0\u0227\0\23\0\23\0\u023a\0\u024d\0\23\0\23\0\u0260"+
+    "\0\23\0\u0273\0\23";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[54];
+    int [] result = new int[51];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -106,22 +106,21 @@ class Lexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_TRANS = zzUnpackTrans();
 
   private static final String ZZ_TRANS_PACKED_0 =
-    "\1\2\2\3\1\4\1\5\1\6\4\2\1\7\1\2"+
-    "\1\10\1\11\1\12\1\2\1\13\1\14\1\2\1\15"+
-    "\1\2\1\16\30\0\1\17\1\4\5\0\1\20\21\0"+
-    "\1\21\30\0\1\22\30\0\1\23\17\0\1\24\27\0"+
-    "\1\25\35\0\1\26\15\0\1\27\3\0\1\30\31\0"+
-    "\1\31\27\0\1\32\10\0\1\33\24\0\1\34\30\0"+
-    "\1\35\31\0\1\36\25\0\1\37\17\0\1\40\5\0"+
-    "\1\41\17\0\1\42\33\0\1\43\17\0\1\44\14\0"+
-    "\1\45\25\0\1\46\10\0\1\47\5\0\1\50\32\0"+
-    "\1\51\13\0\1\52\27\0\1\53\23\0\1\54\24\0"+
-    "\1\55\5\0\1\56\37\0\1\57\7\0\1\60\27\0"+
-    "\1\61\25\0\1\62\24\0\1\63\40\0\1\64\13\0"+
-    "\1\65\22\0\1\66\20\0";
+    "\1\2\1\3\1\4\1\5\1\2\1\6\1\7\1\10"+
+    "\1\11\1\3\1\12\1\2\1\13\1\14\1\3\1\15"+
+    "\1\16\1\2\1\3\25\0\1\17\24\0\1\20\24\0"+
+    "\1\21\32\0\1\22\12\0\1\23\25\0\1\24\24\0"+
+    "\1\25\13\0\1\26\4\0\1\27\24\0\1\30\13\0"+
+    "\1\31\33\0\1\32\10\0\1\33\22\0\1\34\3\0"+
+    "\1\35\16\0\1\36\41\0\1\37\7\0\1\40\16\0"+
+    "\1\41\34\0\1\42\14\0\1\43\5\0\1\44\10\0"+
+    "\1\45\3\0\1\46\23\0\1\47\25\0\1\50\20\0"+
+    "\1\51\14\0\1\52\3\0\1\53\21\0\1\54\24\0"+
+    "\1\55\33\0\1\56\17\0\1\57\22\0\1\60\17\0"+
+    "\1\61\26\0\1\62\11\0\1\63\14\0";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[792];
+    int [] result = new int[646];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -159,12 +158,12 @@ class Lexer implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\2\11\12\1\1\11\4\0\5\1\1\0\1\1"+
-    "\2\0\1\1\1\0\7\11\1\0\1\1\2\11\4\0"+
-    "\3\11\1\0\1\11\3\0\2\11";
+    "\1\0\2\11\16\1\2\0\2\1\1\0\2\1\2\0"+
+    "\4\11\1\0\2\11\1\1\1\11\1\0\2\11\3\0"+
+    "\2\11\2\0\2\11\1\0\1\11\1\0\1\11";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[54];
+    int [] result = new int[51];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -574,23 +573,27 @@ public void setSymbolFactory(SymbolFactory symbolFactory) {
       zzMarkedPos = zzMarkedPosL;
 
       switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
-        case 6: 
+        case 5: 
           { return getSymbolFactory().newSymbol ("RE", Sym.RE);
           }
-        case 27: break;
-        case 26: 
+        case 26: break;
+        case 25: 
           { return getSymbolFactory().newSymbol ("SILENCE", Sym.SILENCE);
           }
-        case 28: break;
-        case 15: 
+        case 27: break;
+        case 14: 
           { return getSymbolFactory().newSymbol ("MIB", Sym.MIB);
           }
-        case 29: break;
-        case 24: 
+        case 28: break;
+        case 23: 
           { return getSymbolFactory().newSymbol ("BEGIN", Sym.BEGIN);
           }
+        case 29: break;
+        case 4: 
+          { return getSymbolFactory().newSymbol ("DO", Sym.DO);
+          }
         case 30: break;
-        case 16: 
+        case 15: 
           { return getSymbolFactory().newSymbol ("FAD", Sym.FAD);
           }
         case 31: break;
@@ -598,7 +601,7 @@ public void setSymbolFactory(SymbolFactory symbolFactory) {
           { return getSymbolFactory().newSymbol ("SIB", Sym.SIB);
           }
         case 32: break;
-        case 8: 
+        case 7: 
           { return getSymbolFactory().newSymbol ("FA", Sym.FA);
           }
         case 33: break;
@@ -606,79 +609,70 @@ public void setSymbolFactory(SymbolFactory symbolFactory) {
           { return getSymbolFactory().newSymbol ("LAB", Sym.LAB);
           }
         case 34: break;
-        case 9: 
+        case 8: 
           { return getSymbolFactory().newSymbol ("SI", Sym.SI);
           }
         case 35: break;
-        case 25: 
-          { return getSymbolFactory().newSymbol ("BPM", Sym.BPM, new Integer(yytext().replace(" BEGIN", "")));
-          }
-        case 36: break;
-        case 5: 
-          { System.out.println(yytext());
-return getSymbolFactory().newSymbol ("DO", Sym.DO);
-          }
-        case 37: break;
-        case 4: 
+        case 24: 
           { return getSymbolFactory().newSymbol ("COMMA", Sym.COMMA);
           }
-        case 38: break;
-        case 13: 
+        case 36: break;
+        case 12: 
           { return getSymbolFactory().newSymbol ("REB", Sym.REB);
           }
-        case 39: break;
-        case 22: 
+        case 37: break;
+        case 2: 
+          { return getSymbolFactory().newSymbol ("BPM", Sym.BPM, new Integer(yytext()));
+          }
+        case 38: break;
+        case 20: 
           { return getSymbolFactory().newSymbol ("SOLD", Sym.SOLD);
           }
-        case 40: break;
-        case 20: 
+        case 39: break;
+        case 18: 
           { return getSymbolFactory().newSymbol ("LAD", Sym.LAD);
           }
-        case 41: break;
-        case 10: 
+        case 40: break;
+        case 9: 
           { return getSymbolFactory().newSymbol ("LA", Sym.LA);
           }
-        case 42: break;
+        case 41: break;
         case 3: 
-          { return getSymbolFactory().newSymbol ("DURATION", Sym.DURATION, new Float(yytext()));
+          { return getSymbolFactory().newSymbol ("DURATION", Sym.DURATION, new Integer(yytext()));
           }
-        case 43: break;
-        case 7: 
+        case 42: break;
+        case 6: 
           { return getSymbolFactory().newSymbol ("MI", Sym.MI);
           }
-        case 44: break;
-        case 23: 
+        case 43: break;
+        case 22: 
           { return getSymbolFactory().newSymbol ("PLAY", Sym.PLAY);
           }
-        case 45: break;
+        case 44: break;
         case 21: 
           { return getSymbolFactory().newSymbol ("SOLB", Sym.SOLB);
           }
-        case 46: break;
-        case 14: 
+        case 45: break;
+        case 11: 
           { return getSymbolFactory().newSymbol ("RED", Sym.RED);
           }
-        case 47: break;
+        case 46: break;
         case 1: 
           { throw new Error("Illegal character <"+yytext()+">");
           }
-        case 48: break;
-        case 18: 
+        case 47: break;
+        case 16: 
           { return getSymbolFactory().newSymbol ("SOL", Sym.SOL);
           }
-        case 49: break;
-        case 12: 
+        case 48: break;
+        case 10: 
           { return getSymbolFactory().newSymbol ("DOD", Sym.DOD);
           }
-        case 50: break;
-        case 2: 
-          { 
-          }
-        case 51: break;
-        case 11: 
+        case 49: break;
+        case 13: 
           { return getSymbolFactory().newSymbol ("END", Sym.END);
           }
-        case 52: break;
+        case 50: break;
         default: 
           if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
             zzAtEOF = true;

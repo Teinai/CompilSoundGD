@@ -34,54 +34,51 @@ parser code {:
 
 terminal Float DURATION;
 terminal Integer BPM;
-terminal TERM, BEGIN, END;
+terminal BEGIN, END, EOLN;
 terminal COMMA;
 terminal PLAY, ID;
-terminal Integer DO, DOD, REB, RE, RED, MIB, MI, FA, FAD, SOLB, SOL, SOLD, LAB, LA, LAD, SIB, SI, SILENCE;
+terminal DO, DOD, REB, RE, RED, MIB, MI, FA, FAD, SOLB, SOL, SOLD, LAB, LA, LAD, SIB, SI, SILENCE;
 
-nonterminal Play, Plays, Playable, Score, Sequence, Notes, Note, Hight;
+nonterminal Play, Plays, Playable, Sequence, Notes, Note, Hight;
 
-//Instructions	::= 
-
-Play		::=	PLAY Plays
+Play		::=	PLAY Plays					{: SoundFactory.getScore().play(); :}
 			;
 
 Plays		::=
-		| 	Plays Playable
+		| 	Plays Playable:p				{: SoundFactory.getScore().add((Sequence) p); :}
 		;
 
-Playable	::=	ID
-			|	Sequence
+Playable	::=	Sequence:s					{: RESULT = SoundFactory.getSequence(); :}
 			;
 			
-Score 		::=	Sequence BPM
+Sequence	::=	BPM:bpm BEGIN Notes:n END	{: RESULT = SoundFactory.createSequence(bpm, (ArrayList<Tone>) n); :}										
 			;
-Sequence	::= 	BEGIN Notes END
-			;
-		
-Notes		::=	Note
-			| 	Notes COMMA Note
-			;
-		
-Note		::=	Hight DURATION 
+
+Notes		::=	Note:n						{: ArrayList<Tone> l = SoundFactory.createToneList();
+											   l.add((Tone) n);
+											   RESULT = l; :}
+			| 	Notes COMMA Note:n			{: RESULT = SoundFactory.getToneList().add((Tone) n); :}
 			;
 		
-Hight 		::=	DO
-			|	DOD
-			|	REB
-			|	RE
-			|	RED
-			|	MIB
-			|	MI
-			|	FA
-			|	FAD
-			|	SOLB
-			|	SOL
-			|	SOLD
-			|	LAB
-			|	LA
-			|	LAD
-			|	SIB
-			|	SI
-			|	SILENCE
+Note		::=	Hight:h DURATION:d			{: RESULT = SoundFactory.createTone(h,d); :}
+			;
+		
+Hight 		::=	DO							{: RESULT = SoundFactory.Tones.DO; :}
+			|	DOD							{: RESULT = SoundFactory.Tones.DOD; :}
+			|	REB							{: RESULT = SoundFactory.Tones.REB; :}
+			|	RE							{: RESULT = SoundFactory.Tones.DO; :}
+			|	RED							{: RESULT = SoundFactory.Tones.RED; :}
+			|	MIB							{: RESULT = SoundFactory.Tones.MIB; :}
+			|	MI							{: RESULT = SoundFactory.Tones.MI; :}
+			|	FA							{: RESULT = SoundFactory.Tones.FA; :}
+			|	FAD							{: RESULT = SoundFactory.Tones.FAD; :}
+			|	SOLB						{: RESULT = SoundFactory.Tones.SOLB; :}
+			|	SOL							{: RESULT = SoundFactory.Tones.SOL; :}
+			|	SOLD						{: RESULT = SoundFactory.Tones.SOLD; :}
+			|	LAB							{: RESULT = SoundFactory.Tones.LAB; :}
+			|	LA							{: RESULT = SoundFactory.Tones.LA; :}
+			|	LAD							{: RESULT = SoundFactory.Tones.LAD; :}
+			|	SIB							{: RESULT = SoundFactory.Tones.SIB; :}
+			|	SI							{: RESULT = SoundFactory.Tones.SI; :}
+			|	SILENCE						{: RESULT = SoundFactory.Tones.SILENCE; :}
 			;
